@@ -12,16 +12,16 @@ CRON_LOG="$LOG_DIR/cron_execution.log"
 crontab -r 2>/dev/null
 
 # Add each job with a different minute
-(crontab -l 2>/dev/null; echo "13 14 * * * $MAIN_SCRIPT full >> $CRON_LOG 2>&1") | crontab -
-(crontab -l 2>/dev/null; echo "14 14 * * * $MAIN_SCRIPT short >> $CRON_LOG 2>&1") | crontab -
-(crontab -l 2>/dev/null; echo "15 14 * * * $MAIN_SCRIPT email-full >> $CRON_LOG 2>&1") | crontab -
-(crontab -l 2>/dev/null; echo "16 14 * * * $MAIN_SCRIPT email-short >> $CRON_LOG 2>&1") | crontab -
+(crontab -l 2>/dev/null; echo "00 04 * * * $MAIN_SCRIPT full >> $CRON_LOG 2>&1") | crontab -
+(crontab -l 2>/dev/null; echo "01 04 * * * $MAIN_SCRIPT short >> $CRON_LOG 2>&1") | crontab -
+(crontab -l 2>/dev/null; echo "02 04 * * * $MAIN_SCRIPT email-full >> $CRON_LOG 2>&1") | crontab -
+(crontab -l 2>/dev/null; echo "03 04 * * * $MAIN_SCRIPT email-short >> $CRON_LOG 2>&1") | crontab -
 
 echo "[OK] Cron jobs installed at different minutes:"
-echo "  14:13 - full report (save only)"
-echo "  14:14 - short report (save only)"
-echo "  14:15 - email-full (save + email)"
-echo "  14:16 - email-short (save + email)"
+echo "  04:00 - full report (save only)"
+echo "  04:01 - short report (save only)"
+echo "  04:02 - email-full (save + email)"
+echo "  04:03 - email-short (save + email)"
 echo ""
 echo "Current cron jobs:"
 crontab -l
